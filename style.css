@@ -1,1 +1,213 @@
-/* Styles cleared for new project */
+:root {
+    --primary-color: #FF9800;
+    --primary-light: #FFE0B2;
+    --bg-color: #FFF8E1;
+    --text-color: #3E2723;
+    --white: #ffffff;
+    --shadow: 0 4px 15px rgba(255, 152, 0, 0.2);
+    --btn-shadow: 0 6px 0 #E68900;
+    --btn-active: 0 2px 0 #E68900;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Nanum Gothic', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+#app {
+    max-width: 500px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: var(--white);
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+
+.screen {
+    padding: 20px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header */
+.main-header {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.logo-text {
+    font-size: 3rem;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 0px var(--primary-light);
+    letter-spacing: -1px;
+}
+
+/* Menu Grid */
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding-bottom: 40px;
+}
+
+.menu-item {
+    background-color: var(--white);
+    border: 3px solid var(--primary-color);
+    border-radius: 20px;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--btn-shadow);
+    transition: all 0.1s;
+    position: relative;
+    top: 0;
+}
+
+.menu-item:active {
+    top: 4px;
+    box-shadow: var(--btn-active);
+}
+
+.menu-item.highlight {
+    background-color: var(--primary-light);
+}
+
+.menu-item .icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.menu-item .label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--text-color);
+    word-break: keep-all;
+}
+
+/* Sub Header */
+.sub-header {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 2px dashed var(--primary-light);
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+/* Food Cards */
+.food-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.food-card {
+    background-color: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 2px solid var(--primary-light);
+}
+
+.food-img {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+}
+
+.food-info {
+    padding: 20px;
+}
+
+.food-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.food-info p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.card-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.btn-sm {
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #E68900;
+}
+
+.btn-sm.gift {
+    background-color: #FF5722;
+    box-shadow: 0 4px 0 #E64A19;
+}
+
+.btn-sm:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+/* Toast */
+.toast {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(62, 39, 35, 0.9);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    z-index: 1000;
+    white-space: nowrap;
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from { bottom: -50px; opacity: 0; }
+    to { bottom: 50px; opacity: 1; }
+}
+
+/* Typography for cute look */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');

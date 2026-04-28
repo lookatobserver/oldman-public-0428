@@ -3,9 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Project</title>
+    <title>천원의 행복 - 어르신 급식 서비스</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>새로운 프로젝트가 준비되었습니다.</h1>
+    <div id="app">
+        <!-- 메인 화면 -->
+        <section id="home-screen" class="screen">
+            <header class="main-header">
+                <h1 class="logo-text">천원의 행복</h1>
+            </header>
+            <nav class="menu-grid">
+                <button class="menu-item" onclick="navigateTo('menu-screen')">
+                    <span class="icon">🍱</span>
+                    <span class="label">오늘의 메뉴</span>
+                </button>
+                <button class="menu-item" onclick="showMsg('위치 정보를 준비 중입니다.')">
+                    <span class="icon">📍</span>
+                    <span class="label">위치</span>
+                </button>
+                <button class="menu-item" onclick="showMsg('함께하는 분들을 소개합니다.')">
+                    <span class="icon">🤝</span>
+                    <span class="label">함께하는 사람들</span>
+                </button>
+                <button class="menu-item" onclick="showMsg('후원해주시는 감사한 분들입니다.')">
+                    <span class="icon">❤️</span>
+                    <span class="label">후원하는 사람들</span>
+                </button>
+                <button class="menu-item highlight" onclick="showMsg('기부 페이지로 이동합니다.')">
+                    <span class="icon">🎁</span>
+                    <span class="label">기부하기</span>
+                </button>
+                <button class="menu-item" onclick="showMsg('오늘 식사가 예약되었습니다!')">
+                    <span class="icon">📅</span>
+                    <span class="label">오늘식사 예약하기</span>
+                </button>
+                <button class="menu-item" onclick="showMsg('오늘 식사를 선물했습니다!')">
+                    <span class="icon">🔥</span>
+                    <span class="label">오늘식사 쏘기</span>
+                </button>
+                <button class="menu-item" onclick="showMsg('식권이 발행되었습니다.')">
+                    <span class="icon">🎟️</span>
+                    <span class="label">식권 발행</span>
+                </button>
+            </nav>
+        </section>
+
+        <!-- 오늘의 메뉴 화면 -->
+        <section id="menu-screen" class="screen hidden">
+            <header class="sub-header">
+                <button class="back-btn" onclick="navigateTo('home-screen')">← 뒤로</button>
+                <h2>오늘의 메뉴</h2>
+            </header>
+            <div class="food-container">
+                <article class="food-card">
+                    <div class="food-img" style="background-image: url('https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&w=500&q=80')"></div>
+                    <div class="food-info">
+                        <h3>맛있는 된장찌개</h3>
+                        <p>구수한 된장에 두부와 애호박이 듬뿍!</p>
+                        <div class="card-btns">
+                            <button class="btn-sm" onclick="showMsg('된장찌개 예약 완료!')">예약하기</button>
+                            <button class="btn-sm gift" onclick="showMsg('된장찌개 한 그릇 쐈습니다!')">음식 쏘기</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="food-card">
+                    <div class="food-img" style="background-image: url('https://images.unsplash.com/photo-1615557960916-5f4791effe9d?auto=format&fit=crop&w=500&q=80')"></div>
+                    <div class="food-info">
+                        <h3>고급 등심 돈까스</h3>
+                        <p>겉바속촉! 육즙 가득한 등심 돈까스입니다.</p>
+                        <div class="card-btns">
+                            <button class="btn-sm" onclick="showMsg('돈까스 예약 완료!')">예약하기</button>
+                            <button class="btn-sm gift" onclick="showMsg('돈까스 한 그릇 쐈습니다!')">음식 쏘기</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <!-- 알림창 모달 -->
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="main.js"></script>
 </body>
 </html>

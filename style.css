@@ -92,6 +92,17 @@ body {
     background-color: var(--primary-light);
 }
 
+.menu-item.highlight-main {
+    background-color: #FFECB3;
+    border-color: #FF6F00;
+    transform: scale(1.05);
+}
+
+.menu-item.highlight-main .label {
+    color: #E65100;
+    font-size: 1.2rem;
+}
+
 .menu-item .icon {
     font-size: 2.5rem;
     margin-bottom: 10px;

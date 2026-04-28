@@ -13,112 +13,105 @@
         <!-- ① 메인 화면 -->
         <section id="home-screen" class="screen">
 
-            <!-- 그라디언트 헤더 -->
-            <header class="main-header">
-                <div class="header-top">
-                    <div class="header-brand">
-                        <span class="brand-emoji">🍱</span>
-                        <div>
-                            <p class="brand-sub">어르신 급식 서비스</p>
-                            <h1 class="logo-text">천원의 행복</h1>
-                        </div>
-                    </div>
-                    <div class="header-date-badge">
-                        <span id="today-date"></span>
+            <!-- 앱 바 -->
+            <header class="app-bar">
+                <div class="app-bar-brand">
+                    <span class="brand-emoji">🍱</span>
+                    <div class="brand-texts">
+                        <span class="brand-sub">어르신 급식 서비스</span>
+                        <strong class="brand-name">천원의 행복</strong>
                     </div>
                 </div>
-                <p class="header-greeting">오늘도 건강하고 따뜻한 하루 되세요 🌿</p>
-                <div class="deco-circle c1"></div>
-                <div class="deco-circle c2"></div>
+                <div class="date-chip" id="today-date"></div>
             </header>
 
-            <!-- 히어로 카드 — 오늘의 메뉴 진입 -->
-            <div class="hero-section">
-                <button class="hero-card" onclick="navigateTo('menu-screen')">
-                    <div class="hero-image">
-                        <img src="https://images.unsplash.com/photo-1635363638580-c2809d049eee?w=800&auto=format&fit=crop&q=80"
-                             alt="오늘의 메뉴">
-                    </div>
-                    <div class="hero-overlay">
-                        <span class="hero-badge">🍱 오늘의 메뉴</span>
+            <!-- 인사말 배너 -->
+            <div class="greeting-bar">
+                <span>🌿</span>
+                <span>오늘도 건강하고 따뜻한 하루 되세요</span>
+            </div>
+
+            <!-- 히어로 배너 -->
+            <div class="hero-wrap">
+                <button class="hero-banner" onclick="navigateTo('menu-screen')">
+                    <img class="hero-img"
+                         src="https://images.unsplash.com/photo-1635363638580-c2809d049eee?w=800&auto=format&fit=crop&q=80"
+                         alt="오늘의 메뉴">
+                    <div class="hero-dim"></div>
+                    <div class="hero-content">
+                        <span class="hero-chip">🍱 오늘의 메뉴</span>
                         <h2 class="hero-title">된장찌개 &amp; 돈까스</h2>
                         <p class="hero-desc">따뜻하고 든든한 오늘의 한 끼</p>
-                        <div class="hero-cta">메뉴 보러가기 <span class="cta-arrow">→</span></div>
+                        <div class="hero-cta">메뉴 보러가기 <span>→</span></div>
                     </div>
                 </button>
             </div>
 
+            <!-- 섹션 구분 -->
+            <div class="section-divider"></div>
+
             <!-- 빠른 메뉴 -->
-            <div class="section-wrap">
-                <h2 class="section-title">빠른 메뉴</h2>
-                <div class="action-grid">
-                    <button class="action-card booking" onclick="showMsg('오늘 식사가 예약되었습니다!')">
-                        <div class="action-deco"></div>
-                        <div class="action-icon-wrap">📅</div>
-                        <div class="action-text">
-                            <span class="action-label">식사 예약</span>
-                            <span class="action-sub">오늘 메뉴 예약하기</span>
-                        </div>
+            <div class="section">
+                <div class="section-head">
+                    <h2 class="section-title">빠른 메뉴</h2>
+                </div>
+                <div class="category-grid">
+                    <button class="cat-item" onclick="showMsg('오늘 식사가 예약되었습니다!')">
+                        <div class="cat-icon booking">📅</div>
+                        <span class="cat-label">식사 예약</span>
                     </button>
-                    <button class="action-card ticket" onclick="showMsg('식권이 발행되었습니다.')">
-                        <div class="action-deco"></div>
-                        <div class="action-icon-wrap">🎟️</div>
-                        <div class="action-text">
-                            <span class="action-label">식권 발행</span>
-                            <span class="action-sub">모바일 식권 받기</span>
-                        </div>
+                    <button class="cat-item" onclick="showMsg('식권이 발행되었습니다.')">
+                        <div class="cat-icon ticket">🎟️</div>
+                        <span class="cat-label">식권 발행</span>
                     </button>
-                    <button class="action-card share" onclick="showMsg('오늘 식사를 선물했습니다!')">
-                        <div class="action-deco"></div>
-                        <div class="action-icon-wrap">🔥</div>
-                        <div class="action-text">
-                            <span class="action-label">식사 쏘기</span>
-                            <span class="action-sub">이웃에게 한 끼 선물</span>
-                        </div>
+                    <button class="cat-item" onclick="showMsg('오늘 식사를 선물했습니다!')">
+                        <div class="cat-icon share">🔥</div>
+                        <span class="cat-label">식사 쏘기</span>
                     </button>
-                    <button class="action-card donate" onclick="showMsg('기부 페이지로 이동합니다.')">
-                        <div class="action-deco"></div>
-                        <div class="action-icon-wrap">🎁</div>
-                        <div class="action-text">
-                            <span class="action-label">기부하기</span>
-                            <span class="action-sub">따뜻한 나눔 참여</span>
-                        </div>
+                    <button class="cat-item" onclick="showMsg('기부 페이지로 이동합니다.')">
+                        <div class="cat-icon donate">🎁</div>
+                        <span class="cat-label">기부하기</span>
                     </button>
                 </div>
             </div>
+
+            <!-- 섹션 구분 -->
+            <div class="section-divider"></div>
 
             <!-- 더보기 -->
-            <div class="section-wrap">
-                <h2 class="section-title">더보기</h2>
-                <div class="more-cards">
-                    <button class="more-card location" onclick="showMsg('위치 정보를 준비 중입니다.')">
-                        <span class="more-icon">📍</span>
-                        <div class="more-text">
-                            <span class="more-title">급식소 위치 안내</span>
-                            <span class="more-desc">가까운 급식소를 찾아보세요</span>
+            <div class="section">
+                <div class="section-head">
+                    <h2 class="section-title">더보기</h2>
+                </div>
+                <div class="more-list">
+                    <button class="more-row" onclick="showMsg('위치 정보를 준비 중입니다.')">
+                        <div class="more-row-icon location">📍</div>
+                        <div class="more-row-text">
+                            <span class="more-row-title">급식소 위치 안내</span>
+                            <span class="more-row-desc">가까운 급식소를 찾아보세요</span>
                         </div>
-                        <span class="more-arrow">›</span>
+                        <span class="more-row-arrow">›</span>
                     </button>
-                    <button class="more-card together" onclick="showMsg('함께하는 분들을 소개합니다.')">
-                        <span class="more-icon">🤝</span>
-                        <div class="more-text">
-                            <span class="more-title">함께하는 사람들</span>
-                            <span class="more-desc">봉사자와 참여자를 소개합니다</span>
+                    <button class="more-row" onclick="showMsg('함께하는 분들을 소개합니다.')">
+                        <div class="more-row-icon together">🤝</div>
+                        <div class="more-row-text">
+                            <span class="more-row-title">함께하는 사람들</span>
+                            <span class="more-row-desc">봉사자와 참여자를 소개합니다</span>
                         </div>
-                        <span class="more-arrow">›</span>
+                        <span class="more-row-arrow">›</span>
                     </button>
-                    <button class="more-card sponsor" onclick="showMsg('후원해주시는 감사한 분들입니다.')">
-                        <span class="more-icon">❤️</span>
-                        <div class="more-text">
-                            <span class="more-title">후원하는 사람들</span>
-                            <span class="more-desc">감사한 후원자분들을 소개합니다</span>
+                    <button class="more-row" onclick="showMsg('후원해주시는 감사한 분들입니다.')">
+                        <div class="more-row-icon sponsor">❤️</div>
+                        <div class="more-row-text">
+                            <span class="more-row-title">후원하는 사람들</span>
+                            <span class="more-row-desc">감사한 후원자분들을 소개합니다</span>
                         </div>
-                        <span class="more-arrow">›</span>
+                        <span class="more-row-arrow">›</span>
                     </button>
                 </div>
             </div>
 
-            <div class="bottom-spacer"></div>
+            <div class="tab-spacer"></div>
         </section>
 
         <!-- ② 오늘의 메뉴 화면 -->
@@ -152,7 +145,28 @@
                 </article>
             </div>
         </section>
+
     </div>
+
+    <!-- 탭 바 -->
+    <nav class="tab-bar">
+        <button class="tab-item active" onclick="navigateTo('home-screen')">
+            <span class="tab-icon">🏠</span>
+            <span class="tab-label">홈</span>
+        </button>
+        <button class="tab-item" onclick="navigateTo('menu-screen')">
+            <span class="tab-icon">🍱</span>
+            <span class="tab-label">메뉴</span>
+        </button>
+        <button class="tab-item" onclick="showMsg('예약 내역을 준비 중입니다.')">
+            <span class="tab-icon">📋</span>
+            <span class="tab-label">예약 내역</span>
+        </button>
+        <button class="tab-item" onclick="showMsg('내 정보 페이지를 준비 중입니다.')">
+            <span class="tab-icon">👤</span>
+            <span class="tab-label">내 정보</span>
+        </button>
+    </nav>
 
     <div id="toast" class="toast hidden"></div>
     <script src="main.js"></script>

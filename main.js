@@ -4,17 +4,21 @@
 
 // 화면 전환 함수
 function navigateTo(screenId) {
-    // 모든 화면 숨기기
-    const screens = document.querySelectorAll('.screen');
-    screens.forEach(screen => {
-        screen.classList.add('hidden');
-    });
+    document.querySelectorAll('.screen').forEach(s => s.classList.add('hidden'));
 
-    // 대상 화면 보여주기
     const targetScreen = document.getElementById(screenId);
     if (targetScreen) {
         targetScreen.classList.remove('hidden');
-        window.scrollTo(0, 0); // 화면 전환 시 최상단으로 이동
+        window.scrollTo(0, 0);
+    }
+
+    // 탭 바 활성 탭 동기화
+    const tabMap = { 'home-screen': 0, 'menu-screen': 1 };
+    const tabIdx = tabMap[screenId];
+    if (tabIdx !== undefined) {
+        document.querySelectorAll('.tab-item').forEach((t, i) => {
+            t.classList.toggle('active', i === tabIdx);
+        });
     }
 }
 

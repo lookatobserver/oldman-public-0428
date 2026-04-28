@@ -30,7 +30,17 @@ function showMsg(message) {
     }, 2000);
 }
 
+// 오늘 날짜 표시
+function updateTodayDate() {
+    const el = document.getElementById('today-date');
+    if (!el) return;
+    const d = new Date();
+    const days = ['일', '월', '화', '수', '목', '금', '토'];
+    el.textContent = `${d.getMonth() + 1}월 ${d.getDate()}일 ${days[d.getDay()]}요일`;
+}
+
 // 초기 로딩 시 홈 화면으로 시작
 document.addEventListener('DOMContentLoaded', () => {
     navigateTo('home-screen');
+    updateTodayDate();
 });
